@@ -31,6 +31,11 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * @var array
      */
+    protected $lineColor = null;
+
+    /**
+     * @var array
+     */
     protected $backgroundColor = null;
 
     /**
@@ -135,7 +140,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
         } else {
             $this->builder = $builder;
         }
-        
+
         $this->phrase = is_string($phrase) ? $phrase : $this->builder->build($phrase);
     }
 
@@ -229,6 +234,13 @@ class CaptchaBuilder implements CaptchaBuilderInterface
         return $this;
     }
 
+    public function setLineColor($r, $g, $b)
+    {
+        $this->lineColor = array($r, $g, $b);
+
+        return $this;
+    }
+
     /**
      * Sets the ignoreAllEffects value
      *
@@ -257,8 +269,18 @@ class CaptchaBuilder implements CaptchaBuilderInterface
      */
     protected function drawLine($image, $width, $height, $tcol = null)
     {
+        if ($this->lineColor === null) {
+            $red = $this->rand(100, 255);
+            $green = $this->rand(100, 255);
+            $blue = $this->rand(100, 255);
+        } else {
+            $red = $this->lineColor[0];
+            $green = $this->lineColor[1];
+            $blue = $this->lineColor[2];
+        }
+
         if ($tcol === null) {
-            $tcol = imagecolorallocate($image, $this->rand(100, 255), $this->rand(100, 255), $this->rand(100, 255));
+            $tcol = imagecolorallocate($image, $red, $green, $blue);
         }
 
         if ($this->rand(0, 1)) { // Horizontal
@@ -319,12 +341,12 @@ class CaptchaBuilder implements CaptchaBuilderInterface
         }
 
         // Gets the text size and start position
-        $size = $width / $length - $this->rand(0, 3) - 1;
+        $size = (int) round($width / $length) - $this->rand(0, 3) - 1;
         $box = \imagettfbbox($size, 0, $font, $phrase);
         $textWidth = $box[2] - $box[0];
         $textHeight = $box[1] - $box[7];
-        $x = ($width - $textWidth) / 2;
-        $y = ($height - $textHeight) / 2 + $size;
+        $x = (int) round(($width - $textWidth) / 2);
+        $y = (int) round(($height - $textHeight) / 2) + $size;
 
         if (!$this->textColor) {
             $textColor = array($this->rand(0, 150), $this->rand(0, 150), $this->rand(0, 150));
@@ -405,7 +427,6 @@ class CaptchaBuilder implements CaptchaBuilderInterface
                 $color = $this->backgroundColor;
                 $bg = imagecolorallocate($image, $color[0], $color[1], $color[2]);
             }
-            $this->background = $bg;
             imagefill($image, 0, 0, $bg);
         } else {
             // use a random background image
@@ -583,7 +604,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
             $value = current($this->fingerprint);
             next($this->fingerprint);
         } else {
-            $value = mt_rand($min, $max);
+            $value = mt_rand((int)$min, (int)$max);
             $this->fingerprint[] = $value;
         }
 
@@ -709,7 +730,6 @@ class CaptchaBuilder implements CaptchaBuilderInterface
 
             default:
                 throw new Exception('Not supported file type for background image!');
-                break;
         }
 
         return $image;
