@@ -1,8 +1,8 @@
 {
-	"plugin-data": {
-		"name": "Snicker",
-		"description": "Ein natives, AJAX-unterstütztes FlatFile Kommentiersystem für Bludit, mit einer Abonnement-Funktion und im Einklang mit der DSGVO!"
-	},
+    "plugin-data": {
+        "name": "Snicker Plus",
+        "description": "Ein modernes, AJAX-gestütztes FlatFile-Kommentarsystem für Bludit. DSGVO-freundlich, leichtgewichtig und hochgradig anpassbar."
+    },
     "s18n-a5d491060952aa8ad5fdee071be752de": "Kommentare",
     "s18n-de95b43bceeb4b998aed4aed5cef1ae7": "Bearbeiten",
     "s18n-f984023ed3d6df2326c9d59838c29792": "Kommentar bearbeiten",
@@ -61,7 +61,7 @@
     "s18n-02b68043bdcae159e83199d64a5abd7d": "Session Speicher",
     "s18n-40bd8791e523e91219886c35622163fc": "Datenbank Speicher",
     "s18n-8717cfca734e8987971f63b20eeb8024": "Was?",
-    "s18n-5a8cbcf57f5b59f0d4b8ded97d018399": "Der <b>Cookie Speicher<\/b> befindet sich auf dem Computer des Nutzers, So hast du nicht den vollen Zugriff darauf UND benötigst zudem die Erlaubnis des Nutzers!", 
+    "s18n-5a8cbcf57f5b59f0d4b8ded97d018399": "Der <b>Cookie Speicher<\/b> befindet sich auf dem Computer des Nutzers, So hast du nicht den vollen Zugriff darauf UND benötigst zudem die Erlaubnis des Nutzers!",
     "s18n-a09dbdf907873e66d9d644cca71970d5": "Der <b>Session Speicher<\/b> legt die Daten temporär auf den Server ab, bis der Nutzer den Browser schließt. Dafür benötigst du allerdings auch keine Berechtigung vom Nutzer.",
     "s18n-71892ebe01ba92d1f163dc37d818b5ff": "Der <b>Datenbank Speicher<\/b> generiert und speichert einen anonymisierten aber zuweisbaren Wert des Nutzers, welche eine entsprechende Einwilligung benötigt.",
     "s18n-7c35a0bcb0b0678f0829036eead5ddca": "<b>Bitte beachte:<\/b> Du bist für die Einholung der Einwilligung des Nutzers verantwortlich, Snicker übernimmt dies lediglich für die Speicherung der Daten über das Kommentar-Formular selbst!",
