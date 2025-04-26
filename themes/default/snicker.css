@@ -78,11 +78,12 @@
 
 .snicker-comments {
     width: 100%;
-    margin: 15px 0 30px 0;
-    padding: 0;
+    margin: 30px 0 30px 0;
+    padding: 20px 10px;
     display: block;
     font-size: 14px;
     line-height: 1.5em;
+    border-top: 1px solid #707478;
 }
 
 .snicker-comments input,
@@ -186,11 +187,12 @@
 }
 
 .snicker-comments input[type="checkbox"]:checked+label:before {
+    content: "✓";
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
     background-color: #343A40;
     border-color: #343A40;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC\
-    9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDEyIDE2Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNM\
-    TIgNWwtOCA4LTQtNCAxLjUtMS41TDQgMTBsNi41LTYuNUwxMiA1eiIvPjwvc3ZnPg==");
 }
 
 .snicker-comments button {
@@ -240,16 +242,6 @@
     content: "";
     display: inline-block;
     position: absolute;
-    background-size: 18px;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC\
-    9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDEyIDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZ\
-    GQiIGQ9Ik0xMC4yNCA3LjRhNC4xNSA0LjE1IDAgMCAxLTEuMiAzLjYgNC4zNDYgNC4zNDYgMCAwIDEtNS40MS41NEw0Ljgg\
-    MTAuNC41IDkuOGwuNiA0LjIgMS4zMS0xLjI2YzIuMzYgMS43NCA1LjcgMS41NyA3Ljg0LS41NGE1Ljg3NiA1Ljg3NiAwIDA\
-    gMCAxLjc0LTQuNDZsLTEuNzUtLjM0ek0yLjk2IDVhNC4zNDYgNC4zNDYgMCAwIDEgNS40MS0uNTRMNy4yIDUuNmw0LjMuNi\
-    0uNi00LjItMS4zMSAxLjI2Yy0yLjM2LTEuNzQtNS43LTEuNTctNy44NS41NEMuNSA1LjAzLS4wNiA2LjY1LjAxIDguMjZsM\
-    S43NS4zNUE0LjE3IDQuMTcgMCAwIDEgMi45NiA1eiIvPjwvc3ZnPg==");
-    background-repeat: no-repeat;
-    background-position: center center;
     animation: spin 2s linear 0ms infinite;
     -moz-animation: spin 2s linear 0ms infinite;
     -webkit-animation: spin 2s linear 0ms infinite;
@@ -302,21 +294,11 @@
 .snicker-comments .no-comments,
 .snicker-comments .disabled-comments {
     width: 100%;
-    margin: 15px 0;
-    padding: 15px 0;
     display: block;
     font-size: 16px;
     text-align: center;
     font-style: italic;
     line-height: 50px;
-}
-
-.snicker-comments .no-comments {
-    background-color: #f4f8fa;
-    border: 1px solid #c0c4c8;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
 }
 
 .snicker-comments .comment-alert {
@@ -358,17 +340,12 @@ form.comment-form .comment-footer {
     width: 100%;
     height: auto;
     margin: 0;
-    padding: 10px;
+    padding: 2px;
     display: block;
 }
 
 form.comment-form .comment-header {
-    font-size: 16px;
-    background-color: #f4f6f8;
-    border-bottom: 1px solid #d0d4d8;
     border-radius: 5px 5px 0 0;
-    -moz-border-radius: 5px 5px 0 0;
-    -webkit-border-radius: 5px 5px 0 0;
 }
 
 form.comment-form .comment-header .inner {
@@ -376,15 +353,11 @@ form.comment-form .comment-header .inner {
 }
 
 form.comment-form .comment-article {
-    padding: 15px 20px;
+    padding: 5px 15px;
 }
 
 form.comment-form .comment-footer {
-    background-color: #f4f6f8;
-    border-top: 1px solid #d0d4d8;
     border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
-    -webkit-border-radius: 0 0 5px 5px;
 }
 
 form.comment-form .comment-captcha {
@@ -448,35 +421,19 @@ form.comment-form .comment-captcha a.reload:before {
 }
 
 form.comment-form .comment-captcha a:after {
+    content: "🔄";
+    font-size: 20px;
+    position: absolute;
     top: 50%;
     left: 50%;
-    width: 24px;
-    height: 24px;
     margin: -12px 0 0 -12px;
-    padding: 2px;
-    content: "";
     z-index: 25;
     opacity: 0;
     display: inline-block;
-    position: absolute;
-    background-size: 20px;
-    background-color: #000;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC\
-    9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDEyIDE2Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNM\
-    TAuMjQgNy40YTQuMTUgNC4xNSAwIDAgMS0xLjIgMy42IDQuMzQ2IDQuMzQ2IDAgMCAxLTUuNDEuNTRMNC44IDEwLjQuNSA5\
-    LjhsLjYgNC4yIDEuMzEtMS4yNmMyLjM2IDEuNzQgNS43IDEuNTcgNy44NC0uNTRhNS44NzYgNS44NzYgMCAwIDAgMS43NC0\
-    0LjQ2bC0xLjc1LS4zNHpNMi45NiA1YTQuMzQ2IDQuMzQ2IDAgMCAxIDUuNDEtLjU0TDcuMiA1LjZsNC4zLjYtLjYtNC4yLT\
-    EuMzEgMS4yNmMtMi4zNi0xLjc0LTUuNy0xLjU3LTcuODUuNTRDLjUgNS4wMy0uMDYgNi42NS4wMSA4LjI2bDEuNzUuMzVBN\
-    C4xNyA0LjE3IDAgMCAxIDIuOTYgNXoiLz48L3N2Zz4=");
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
+    transform: translate(-50%, -50%);
     transition: opacity 142ms linear;
-    -moz-transition: opacity 142ms linear;
-    -webkit-transition: opacity 142ms linear;
 }
+
 
 form.comment-form .comment-captcha a.reload:after {
     opacity: 1;
@@ -500,10 +457,8 @@ form.comment-form .comment-reply {
     display: block;
     position: relative;
     font-size: 80%;
-    background-color: #f4f8fa;
     border-width: 1px 1px 0 1px;
     border-style: solid;
-    border-color: #c0c4c8;
     border-radius: 3px 3px 0 0;
     -moz-border-radius: 3px 3px 0 0;
     -webkit-border-radius: 3px 3px 0 0;
@@ -528,20 +483,18 @@ form.comment-form .comment-reply .reply-cancel {
     opacity: 0.5;
     display: inline-block;
     position: absolute;
-    background-size: 14px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
     background-color: #555;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC\
-    9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDEyIDE2Ij48cGF0aCBmaWxsPSIjZmZmZmZmIiBkP\
-    SJNNy40OCA4bDMuNzUgMy43NS0xLjQ4IDEuNDhMNiA5LjQ4bC0zLjc1IDMuNzUtMS40OC0xLjQ4TDQuNTIgOCAuNzcgNC4y\
-    NWwxLjQ4LTEuNDhMNiA2LjUybDMuNzUtMy43NSAxLjQ4IDEuNDhMNy40OCA4eiIvPjwvc3ZnPg==");
-    background-repeat: no-repeat;
-    background-position: center center;
+    color: #fff;
+    content: "";
     border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
     transition: all 142ms linear;
-    -moz-transition: all 142ms linear;
-    -webkit-transition: all 142ms linear;
+}
+
+form.comment-form .comment-reply .reply-cancel::after {
+    content: "×";
 }
 
 form.comment-form .comment-reply .reply-cancel:hover {
@@ -611,7 +564,6 @@ form.comment-form .comment-reply .reply-title {
 }
 
 .snicker-comments-list .comment .comment-content .comment-title {
-    color: #707478;
     margin: 0;
     padding: 5px 5px 2px 5px;
     display: block;
@@ -638,17 +590,14 @@ form.comment-form .comment-reply .reply-title {
 }
 
 .snicker-comments-list .comment .comment-content .comment-meta {
-    color: #707478;
     margin: 0;
     padding: 1px 6px;
     display: inline-block;
     font-size: 12px;
     line-height: 1.25em;
-    background-color: #e0e4e8;
 }
 
 .snicker-comments-list .comment .comment-content .comment-comment {
-    color: #303438;
     margin: 0;
     padding: 10px;
     display: block;
@@ -658,11 +607,6 @@ form.comment-form .comment-reply .reply-title {
     margin: 0;
     padding: 0;
     display: block;
-    background-color: #f4f6f8;
-    border-top: 1px solid #d0d4d8;
-    border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
-    -webkit-border-radius: 0 0 4px 4px;
 }
 
 .snicker-comments-list .comment .comment-action a {
@@ -697,6 +641,7 @@ form.comment-form .comment-reply .reply-title {
 .snicker-comments-list .comment .comment-action a.action-reply {
     color: #007bff;
     border-color: #007bff;
+    padding: 5px 20px;
 }
 
 .snicker-comments-list .comment .comment-action a:hover,
@@ -719,6 +664,7 @@ form.comment-form .comment-reply .reply-title {
 .snicker-comments-list .comment .comment-action a.action-reply:hover,
 .snicker-comments-list .comment .comment-action a.action-reply.active {
     background-color: #007bff;
+    padding: 5px 20px;
 }
 
 .snicker-comments-list .comment .comment-action a span {
@@ -827,6 +773,15 @@ form.comment-form .comment-reply .reply-title {
     -moz-border-radius-right: 3px;
     -webkit-border-top-right-radius: 3px;
     -webkit-border-bottom-right-radius: 3px;
+}
+
+.snicker-comments .meta-author, .snicker-comments .meta-date {
+    color: inherit;
+    padding: 0;
+}
+
+a.action-like > span, a.action-dislike > span {
+    background-color: inherit;
 }
 
 /* @end COMMENT LIST */
