@@ -1,90 +1,100 @@
 @charset "UTF-8";
 /*
- |  Snicker     The first native FlatFile Comment Plugin 4 Bludit
+ |  Snicker Plus - A FlatFile Comment Plugin for Bludit
  |  @file       ./admin/css/admin.snicker.css
- |  @author     SamBrishes <sam@pytes.net>
- |  @version    0.1.2 [0.1.0] - Alpha
- |
- |  @website    https://github.com/pytesNET/snicker
- |  @license    X11 / MIT License
- |  @copyright  Copyright © 2019 SamBrishes, pytesNET <info@pytes.net>
+ |  @author     Steve Harris (Harris Lineage)
+ |  @version    1.0.0
+ |  @website    https://github.com/harrislineage/snicker-plus
+ |  @license    MIT License
+ |  @copyright  Copyright © 2025 Steve Harris (Harris Lineage)
  */
 
 /* @start GENERAL */
-.shadow-sm-both{
-    box-shadow: 0 0 0.25rem rgba(0,0,0,.075) !important;
+.snicker-shadow-sm-both {
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, .075) !important;
 }
-.table-hover-light tr:hover{
+
+.snicker-table-hover-light tr:hover {
     background-color: #f0f3f6;
 }
 /* @end GENERAL */
 
 /* @start Admin Navigation */
-.nav.nav-pills .nav-link{
+.nav.nav-pills .snicker-nav-link {
     color: #343a40;
-    font-weight: 400;
     font-weight: 600;
     background-color: #e9ecef;
     transition: color 142ms linear, background 142ms linear;
 }
-.nav.nav-pills .nav-link:hover{
+
+.nav.nav-pills .snicker-nav-link:hover {
     background-color: #d9dcdf;
 }
-.nav.nav-pills .nav-link.active{
+
+.nav.nav-pills .snicker-nav-link.active {
     color: #ffffff;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
     background-color: #343a40;
 }
-.nav.nav-pills .nav-link .badge{
+
+.nav.nav-pills .snicker-nav-link .badge {
     margin-top: 3px;
     text-shadow: none;
     vertical-align: top;
 }
-.nav.nav-pills .nav-link.active .badge{
-    text-shadow: none;
+
+.nav.nav-pills .snicker-nav-link.active .badge {
     background-color: #fff;
 }
 
-.nav.nav-pills .nav-link.nav-pending{
+.nav.nav-pills .snicker-nav-link-pending {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
 }
-.nav.nav-pills .nav-link.nav-pending.active{
+
+.nav.nav-pills .snicker-nav-link-pending.active {
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
     background-color: #007bff;
 }
-.nav.nav-pills .nav-link.nav-pending.active .badge{
+
+.nav.nav-pills .snicker-nav-link-pending.active .badge {
     color: #007bff;
 }
-.nav.nav-pills .nav-link.nav-approved{
+
+.nav.nav-pills .snicker-nav-link-approved {
     border-radius: 0 !important;
 }
-.nav.nav-pills .nav-link.nav-approved.active{
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+
+.nav.nav-pills .snicker-nav-link-approved.active {
     background-color: #28A745;
 }
-.nav.nav-pills .nav-link.nav-rejected{
+
+.nav.nav-pills .snicker-nav-link-rejected {
     border-radius: 0 !important;
 }
-.nav.nav-pills .nav-link.nav-rejected.active{
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+
+.nav.nav-pills .snicker-nav-link-rejected.active {
     background-color: #FFC107;
 }
-.nav.nav-pills .nav-link.nav-spam{
+
+.nav.nav-pills .snicker-nav-link-spam {
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
 }
-.nav.nav-pills .nav-link.nav-spam.active{
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+
+.nav.nav-pills .snicker-nav-link-spam.active {
     background-color: #DC3545;
 }
-.nav.nav-pills .nav-link.nav-spam.active .badge{
+
+.nav.nav-pills .snicker-nav-link-spam.active .badge {
     color: #DC3545;
 }
-.nav.nav-pills .nav-link.nav-config{
+
+.nav.nav-pills .snicker-nav-link-config {
     font-weight: 400;
 }
-.nav.nav-pills .nav-link.nav-config .oi{
+
+.nav.nav-pills .snicker-nav-link-config .oi {
     margin-right: 3px;
     line-height: 1.5;
     vertical-align: top;
@@ -92,7 +102,7 @@
 /* @end Admin Navigation */
 
 /* @start Admin Pagination */
-.btn-group.btn-group-pagination .btn{
+.snicker-btn-group-pagination .snicker-btn {
     width: 34px;
     padding-top: 5px;
     padding-bottom: 7px;
@@ -100,7 +110,8 @@
     line-height: 20px;
     text-align: center;
 }
-.btn-group.btn-group-pagination .btn.disabled{
+
+.snicker-btn-group-pagination .snicker-btn.disabled {
     cursor: not-allowed;
 }
 /* @end Admin Pagination */
