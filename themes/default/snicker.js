@@ -94,11 +94,22 @@
 
                     // Add Comment
                     if (list && data.status === "success" && "comment" in data) {
-                        if (list.querySelector(".comment")) {
-                            list.querySelector(".comment").insertAdjacentHTML("beforebegin", data.comment);
+                        var parentField = form.querySelector("input[name='comment[parent_uid]']");
+                        if (parentField && parentField.value) {
+                            var parentComment = document.getElementById('comment-' + parentField.value);
+                            if (parentComment) {
+                                parentComment.insertAdjacentHTML("afterend", data.comment);
+                            } else {
+                                list.insertAdjacentHTML("afterbegin", data.comment);
+                            }
                         } else {
-                            list.insertAdjacentHTML("afterbegin", data.comment);
+                            if (list.querySelector(".comment")) {
+                                list.querySelector(".comment").insertAdjacentHTML("beforebegin", data.comment);
+                            } else {
+                                list.insertAdjacentHTML("afterbegin", data.comment);
+                            }
                         }
+
                         list.querySelector(".comment").classList.add("new-comment");
                         list.querySelector(".comment").scrollIntoView({ behavior: "smooth", block: "center" });
 
