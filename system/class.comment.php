@@ -20,6 +20,8 @@ class Comment
      |  @param  multi   The unique comment id or FALSE.
      |  @param  multi   The unique page comment ID.
      */
+    public $vars = array();
+    
     public function __construct($uid, $uuid)
     {
         $this->vars["uid"] = $uid;

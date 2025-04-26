@@ -417,7 +417,7 @@ class Snicker
         ob_start();
         ?>
         <div id="comments-list" class="snicker-comments-list"><?php
-        if (count($list) < 1) {
+        if (empty($list)) {
             if ($this->commentsAllowed($page)) {
                 ?>
                     <div class="no-comments">

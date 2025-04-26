@@ -566,12 +566,12 @@ class Comments extends dbJSON
         global $SnickerPlugin;
 
         if ($SnickerPlugin->getValue("frontend_order") === "date_asc") {
-            uasort($this->db, function ($a, $b) {
-                return $a["date"] > $b["date"];
+            uasort($this->db, function($a, $b) {
+                return strtotime($a["date"]) <=> strtotime($b["date"]);
             });
         } else if ($SnickerPlugin->getValue("frontend_order") === "date_desc") {
-            uasort($this->db, function ($a, $b) {
-                return $a["date"] < $b["date"];
+            uasort($this->db, function($a, $b) {
+                return strtotime($b["date"]) <=> strtotime($a["date"]);
             });
         }
         return true;
