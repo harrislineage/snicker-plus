@@ -1,16 +1,17 @@
 <?php
 /*
- |  Snicker     The first native FlatFile Comment Plugin 4 Bludit
- |  @file       ./admin/edit.php
- |  @author     SamBrishes <sam@pytes.net>
- |  @version    0.1.2 [0.1.0] - Alpha
- |
- |  @website    https://github.com/pytesNET/snicker
- |  @license    X11 / MIT License
- |  @copyright  Copyright © 2019 SamBrishes, pytesNET <info@pytes.net>
+ |  Snicker Plus - A FlatFile Comment Plugin for Bludit
+ |  @file       ./admin/add.php
+ |  @author     Steve Harris (Harris Lineage)
+ |  @version    1.0.0
+ |  @website    https://github.com/harrislineage/snicker-plus
+ |  @license    MIT License
+ |  @copyright  Copyright © 2025 Steve Harris (Harris Lineage)
  */
-    if(!defined("BLUDIT")){ die("Go directly to Jail. Do not pass Go. Do not collect 200 Cookies!"); }
+if (!defined("BLUDIT")) {
+    die("Access denied");
+}
 
-    // Add Formular 4 Admins
+// Add Form for Admins
 
 ?>

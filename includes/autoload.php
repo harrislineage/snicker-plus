@@ -1,23 +1,23 @@
 <?php
 /*
- |  Snicker     The first native FlatFile Comment Plugin 4 Bludit
+ |  Snicker Plus – A FlatFile Comment Plugin for Bludit
  |  @file       ./includes/autoload.php
- |  @author     SamBrishes <sam@pytes.net>
- |  @version    0.1.2 [0.1.0] - Alpha
- |
- |  @website    https://github.com/pytesNET/snicker
- |  @license    X11 / MIT License
- |  @copyright  Copyright © 2019 SamBrishes, pytesNET <info@pytes.net>
+ |  @author     Steve Harris (Harris Lineage)
+ |  @version    1.0.0
+ |  @website    https://github.com/harrislineage/snicker-plus
+ |  @license    MIT License
+ |  @copyright  Copyright © 2025 Steve Harris (Harris Lineage)
  */
 
-    spl_autoload_register(function($class){
-        foreach(array("Gregwar", "Identicon",  "PIT", "OWASP") AS $allowed){
-            if(strpos($class, $allowed) !== 0){
-                continue;
-            }
-            $path = dirname(__FILE__) . DIRECTORY_SEPARATOR;
-			$class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
-            require_once $class . ".php";
+spl_autoload_register(function($class) {
+    foreach (array("Gregwar", "Identicon", "PIT", "OWASP") as $allowed) {
+        if (strpos($class, $allowed) !== 0) {
+            continue;
         }
-        return false;
-    });
+        $path = dirname(__FILE__) . DIRECTORY_SEPARATOR;
+        $classPath = str_replace("\\", DIRECTORY_SEPARATOR, $class);
+        require_once $path . $classPath . ".php";
+        return true;
+    }
+    return false;
+});

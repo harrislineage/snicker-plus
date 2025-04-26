@@ -1,23 +1,24 @@
 <?php
 /*
- |  Snicker     The first native FlatFile Comment Plugin 4 Bludit
+ |  Snicker Plus - A FlatFile Comment Plugin for Bludit
  |  @file       ./admin/edit.php
- |  @author     SamBrishes <sam@pytes.net>
- |  @version    0.1.2 [0.1.0] - Alpha
- |
- |  @website    https://github.com/pytesNET/snicker
- |  @license    X11 / MIT License
- |  @copyright  Copyright © 2019 SamBrishes, pytesNET <info@pytes.net>
+ |  @author     Steve Harris (Harris Lineage)
+ |  @version    1.0.0
+ |  @website    https://github.com/harrislineage/snicker-plus
+ |  @license    MIT License
+ |  @copyright  Copyright © 2025 Steve Harris (Harris Lineage)
  */
-    if(!defined("BLUDIT")){ die("Go directly to Jail. Do not pass Go. Do not collect 200 Cookies!"); }
+if (!defined('BLUDIT')) {
+    die('Access denied');
+}
+global $login, $pages, $security, $SnickerIndex;
 
-    global $login, $pages, $security, $SnickerIndex;
+$data = $SnickerIndex->getComment($_GET["uid"]);
+$comment = new Comment($_GET["uid"], $data["page_uuid"]);
+$page = new Page($pages->getByUUID($data["page_uuid"]));
 
-    $data = $SnickerIndex->getComment($_GET["uid"]);
-    $comment = new Comment($_GET["uid"], $data["page_uuid"]);
-    $page = new Page($pages->getByUUID($data["page_uuid"]));
-
-?><h2 class="mt-0 mb-3">
+?>
+<h2 class="mt-0 mb-3">
     <span class="oi oi-comment-square" style="font-size: 0.7em;"></span> Snicker <?php sn_e("Comments"); ?> / <?php sn_e("Edit"); ?>
 </h2>
 <form method="post" action="<?php echo HTML_PATH_ADMIN_ROOT; ?>snicker">
@@ -43,21 +44,21 @@
     <div class="row mb-4">
         <div class="col">
             <input type="text" name="comment[title]" value="<?php echo $comment->title(); ?>"
-                class="form-control form-control-lg" placeholder="<?php sn_e("Comment Title"); ?>" />
+                   class="form-control form-control-lg" placeholder="<?php sn_e("Comment Title"); ?>" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-8">
             <textarea name="comment[comment]" class="form-control" placeholder="<?php sn_e("Comment Text"); ?>"
-                style="min-height: 275px;"><?php echo $comment->commentRaw(); ?></textarea>
+                      style="min-height: 275px;"><?php echo $comment->commentRaw(); ?></textarea>
         </div>
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header"><?php sn_e("Meta Settings"); ?></div>
                 <div class="card-body">
 
-                    <?php if(strpos($comment->getValue("author"), "bludit") === 0){ ?>
+                    <?php if (strpos($comment->getValue("author"), "bludit") === 0) { ?>
                         <p>
                             <input type="text" value="<?php echo $comment->username(); ?>" class="form-control" disabled />
                         </p>
@@ -67,19 +68,19 @@
                     <?php } else { ?>
                         <p>
                             <input type="text" name="comment[username]" value="<?php echo $comment->username(); ?>"
-                            class="form-control" placeholder="<?php sn_e("Comment Username"); ?>" />
+                                   class="form-control" placeholder="<?php sn_e("Comment Username"); ?>" />
                         </p>
                         <p>
                             <input type="text" name="comment[email]" value="<?php echo $comment->email(); ?>"
-                            class="form-control" placeholder="<?php sn_e("Comment eMail"); ?>" />
+                                   class="form-control" placeholder="<?php sn_e("Comment eMail"); ?>" />
                         </p>
                     <?php } ?>
                     <p>
                         <select name="comment[status]" class="custom-select">
-                            <option value="pending"<?php echo ($comment->isPending())? ' selected="selected"': ''; ?>><?php sn_e("Pending"); ?></option>
-                            <option value="approved"<?php echo ($comment->isApproved())? ' selected="selected"': ''; ?>><?php sn_e("Approved"); ?></option>
-                            <option value="rejected"<?php echo ($comment->isRejected())? ' selected="selected"': ''; ?>><?php sn_e("Rejected"); ?></option>
-                            <option value="spam"<?php echo ($comment->isSpam())? ' selected="selected"': ''; ?>><?php sn_e("Spam"); ?></option>
+                            <option value="pending" <?php echo ($comment->isPending()) ? ' selected="selected"' : ''; ?>><?php sn_e("Pending"); ?></option>
+                            <option value="approved" <?php echo ($comment->isApproved()) ? ' selected="selected"' : ''; ?>><?php sn_e("Approved"); ?></option>
+                            <option value="rejected" <?php echo ($comment->isRejected()) ? ' selected="selected"' : ''; ?>><?php sn_e("Rejected"); ?></option>
+                            <option value="spam" <?php echo ($comment->isSpam()) ? ' selected="selected"' : ''; ?>><?php sn_e("Spam"); ?></option>
                         </select>
                     </p>
                 </div>

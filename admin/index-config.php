@@ -1,20 +1,21 @@
 <?php
 /*
- |  Snicker     The first native FlatFile Comment Plugin 4 Bludit
+ |  Snicker Plus – A FlatFile Comment Plugin for Bludit
  |  @file       ./admin/index-config.php
- |  @author     SamBrishes <sam@pytes.net>
- |  @version    0.1.2 [0.1.0] - Alpha
- |
- |  @website    https://github.com/pytesNET/snicker
- |  @license    X11 / MIT License
- |  @copyright  Copyright © 2019 SamBrishes, pytesNET <info@pytes.net>
+ |  @author     Steve Harris (Harris Lineage)
+ |  @version    1.0.0
+ |  @website    https://github.com/harrislineage/snicker-plus
+ |  @license    MIT
+ |  @copyright  Copyright © 2025 Steve Harris (Harris Lineage)
  */
-    if(!defined("BLUDIT")){ die("Go directly to Jail. Do not pass Go. Do not collect 200 Cookies!"); }
 
-    global $L, $login, $pages, $security, $Snicker, $SnickerPlugin;
+if (!defined('BLUDIT')) {
+    exit('No direct access');
+}
+global $L, $login, $pages, $security, $Snicker, $SnickerPlugin;
 
-    // Get Static Pages
-    $static = $pages->getStaticDB(false);
+// Get Static Pages
+$static = $pages->getStaticDB(false);
 
 ?>
 <div id="snicker-configure" class="tab-pane">
@@ -52,7 +53,7 @@
 
                                 <div class="custom-control custom-checkbox pl-5 mt-1">
                                     <input type="checkbox" id="sn-moderation-loggedin" name="moderation_loggedin" value="true"
-                                        class="custom-control-input" <?php sn_checked("moderation_loggedin"); ?> />
+                                           class="custom-control-input" <?php sn_checked("moderation_loggedin"); ?> />
                                     <label class="custom-control-label" for="sn-moderation-loggedin"><?php sn_e("Unless the user is logged in"); ?></label>
                                 </div>
                                 <div class="custom-control custom-checkbox pl-5">
@@ -61,7 +62,7 @@
                                 </div>
                                 <div class="custom-control custom-checkbox pl-5 mb-2">
                                     <input type="checkbox" id="sn-moderation-approved" name="moderation_approved" value="true"
-                                        class="custom-control-input" <?php sn_checked("moderation_approved"); ?> />
+                                           class="custom-control-input" <?php sn_checked("moderation_approved"); ?> />
                                     <label class="custom-control-label" for="sn-moderation-approved"><?php sn_e("Unless the user has an already approved comment"); ?></label>
                                 </div>
                             </div>
@@ -72,17 +73,17 @@
                             <div class="col-sm-9">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" id="sn-comment-on-public" name="comment_on_public" value="true"
-                                        class="custom-control-input" <?php sn_checked("comment_on_public"); ?> />
+                                           class="custom-control-input" <?php sn_checked("comment_on_public"); ?> />
                                     <label class="custom-control-label" for="sn-comment-on-public"><?php sn_e("... on Public Pages"); ?></label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" id="sn-comment-on-sticky" name="comment_on_sticky" value="true"
-                                        class="custom-control-input" <?php sn_checked("comment_on_sticky"); ?> />
+                                           class="custom-control-input" <?php sn_checked("comment_on_sticky"); ?> />
                                     <label class="custom-control-label" for="sn-comment-on-sticky"><?php sn_e("... on Sticky Pages"); ?></label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" id="sn-comment-on-static" name="comment_on_static" value="true"
-                                        class="custom-control-input" <?php sn_checked("comment_on_static"); ?> />
+                                           class="custom-control-input" <?php sn_checked("comment_on_static"); ?> />
                                     <label class="custom-control-label" for="sn-comment-on-static"><?php sn_e("... on Static Pages"); ?></label>
                                 </div>
                             </div>
@@ -103,7 +104,7 @@
                             <label for="sn-comment-limit" class="col-sm-3 col-form-label"><?php sn_e("Comment Limit"); ?></label>
                             <div class="col-sm-9">
                                 <input type="number" id="sn-comment-limit" name="comment_limit" value="<?php echo sn_config("comment_limit"); ?>"
-                                    class="form-control" min="0" placeholder="<?php sn_e("Use '0' to disable any limit!"); ?>" />
+                                       class="form-control" min="0" placeholder="<?php sn_e("Use '0' to disable any limit!"); ?>" />
                             </div>
                         </div>
 
@@ -111,7 +112,7 @@
                             <label for="sn-comment-depth" class="col-sm-3 col-form-label"><?php sn_e("Comment Depth"); ?></label>
                             <div class="col-sm-9">
                                 <input type="number" id="sn-comment-depth" name="comment_depth" value="<?php echo sn_config("comment_depth"); ?>"
-                                    class="form-control" min="0" placeholder="<?php sn_e("Use '0' to disable any limit!"); ?>" />
+                                       class="form-control" min="0" placeholder="<?php sn_e("Use '0' to disable any limit!"); ?>" />
                                 <small class="form-text text-muted"><?php sn_e("Use '0' to disable any limit!"); ?></small>
                             </div>
                         </div>
@@ -121,12 +122,12 @@
                             <div class="col-sm-9">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" id="sn-markup-html" name="comment_markup_html" value="true"
-                                        class="custom-control-input" <?php sn_checked("comment_markup_html"); ?> />
+                                           class="custom-control-input" <?php sn_checked("comment_markup_html"); ?> />
                                     <label class="custom-control-label" for="sn-markup-html"><?php sn_e("Allow Basic HTML"); ?></label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" id="sn-markup-markdown" name="comment_markup_markdown" value="true"
-                                        class="custom-control-input" <?php sn_checked("comment_markup_markdown"); ?> />
+                                           class="custom-control-input" <?php sn_checked("comment_markup_markdown"); ?> />
                                     <label class="custom-control-label" for="sn-markup-markdown"><?php sn_e("Allow Markdown"); ?></label>
                                 </div>
                             </div>
@@ -142,7 +143,7 @@
                                     <option value="database" <?php sn_selected("comment_vote_storage", "database"); ?>><?php sn_e("Database Storage"); ?></option>
                                 </select>
                                 <a href="#" class="ml-2 align-top" data-container="body" data-toggle="popover" data-placement="left"
-                                    data-trigger="focus" data-target="#help-content">(<?php sn_e("What?"); ?>)</a>
+                                   data-trigger="focus" data-target="#help-content">(<?php sn_e("What?"); ?>)</a>
                                 <div id="help-content" class="hide d-none" style="width: 100%;">
                                     <p>
                                         <?php sn_e("The <b>Cookie Storage</b> is located on the Computer of the user. So you don't have the full control AND you require the appropriate permissions from the user."); ?>
@@ -160,13 +161,13 @@
 
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" id="sn-like" name="comment_enable_like" value="true"
-                                        class="custom-control-input" <?php sn_checked("comment_enable_like"); ?> />
-                                    <label class="custom-control-label" for="sn-like"><?php sn_e("Allow to %s comments", array("<b>".sn__("Like")."</b>")); ?></label>
+                                           class="custom-control-input" <?php sn_checked("comment_enable_like"); ?> />
+                                    <label class="custom-control-label" for="sn-like"><?php sn_e("Allow to %s comments", array("<b>" . sn__("Like") . "</b>")); ?></label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" id="sn-dislike" name="comment_enable_dislike" value="true"
-                                        class="custom-control-input" <?php sn_checked("comment_enable_dislike"); ?>/>
-                                    <label class="custom-control-label" for="sn-dislike"><?php sn_e("Allow to %s comments", array("<b>".sn__("Dislike")."</b>")); ?></label>
+                                           class="custom-control-input" <?php sn_checked("comment_enable_dislike"); ?> />
+                                    <label class="custom-control-label" for="sn-dislike"><?php sn_e("Allow to %s comments", array("<b>" . sn__("Dislike") . "</b>")); ?></label>
                                 </div>
                             </div>
                         </div>
@@ -197,7 +198,7 @@
                                 <select id="sn-captcha" name="frontend_captcha" class="form-control custom-select">
                                     <option value="disabled" <?php sn_selected("frontend_captcha", "disabled"); ?>><?php sn_e("Disable Captcha"); ?></option>
                                     <option value="purecaptcha" <?php sn_selected("frontend_captcha", "purecaptcha"); ?>><?php sn_e("Use OWASP's PureCaptcha"); ?></option>
-                                    <?php if(function_exists("imagettfbbox")){ ?>
+                                    <?php if (function_exists("imagettfbbox")) { ?>
                                         <option value="gregwar" <?php sn_selected("frontend_captcha", "gregwar"); ?>><?php sn_e("Use Gregway's Captcha"); ?></option>
                                     <?php } else { ?>
                                         <option disabled="disabled"><?php sn_e("Use Gregway's Captcha (GD library is missing!)"); ?></option>
@@ -212,11 +213,11 @@
                             <div class="col-sm-9">
                                 <select id="sn-template" name="frontend_template" class="form-control custom-select">
                                     <?php
-                                        foreach($Snicker->themes AS $key => $theme){
-                                            ?>
-                                                <option value="<?php echo $key; ?>" <?php sn_selected("frontend_template", $key); ?>><?php echo $theme::SNICKER_NAME;  ?></option>
-                                            <?php
-                                        }
+                                    foreach ($Snicker->themes as $key => $theme) {
+                                        ?>
+                                        <option value="<?php echo $key; ?>" <?php sn_selected("frontend_template", $key); ?>><?php echo $theme::SNICKER_NAME; ?></option>
+                                        <?php
+                                    }
                                     ?>
                                 </select>
                             </div>
@@ -246,7 +247,7 @@
                             <label for="sn-per-page" class="col-sm-3 col-form-label"><?php sn_e("Comments Per Page"); ?></label>
                             <div class="col-sm-9">
                                 <input type="number" id="sn-per-page" name="frontend_per_page" value="<?php echo sn_config("frontend_per_page"); ?>"
-                                    class="form-control" min="0" step="1" placheolder="<?php sn_e("Use '0' to show all available comments!"); ?>" />
+                                       class="form-control" min="0" step="1" placheolder="<?php sn_e("Use '0' to show all available comments!"); ?>" />
                                 <small class="form-text text-muted"><?php sn_e("Use '0' to show all available comments!"); ?></small>
                             </div>
                         </div>
@@ -258,7 +259,7 @@
                                     <option value="disabled" <?php sn_selected("frontend_terms", "disabled"); ?>><?php sn_e("Disable this field"); ?></option>
                                     <option value="default" <?php sn_selected("frontend_terms", "default"); ?>><?php sn_e("Show Message (See Strings)"); ?></option>
 
-                                    <?php foreach($static AS $key => $value){ ?>
+                                    <?php foreach ($static as $key => $value) { ?>
                                         <option value="<?php echo $key; ?>" <?php sn_selected("frontend_terms", $key); ?>><?php sn_e("Page"); ?>: <?php echo $value["title"]; ?></option>
                                     <?php } ?>
                                 </select>
@@ -290,7 +291,7 @@
 
                                 <div class="custom-control custom-checkbox mt-1">
                                     <input type="checkbox" id="sn-moderation-users" name="frontend_avatar_users" value="true"
-                                        class="custom-control-input" <?php sn_checked("frontend_avatar_users"); ?> />
+                                           class="custom-control-input" <?php sn_checked("frontend_avatar_users"); ?> />
                                     <label class="custom-control-label" for="sn-moderation-users"><?php sn_e("Use & Prefer profile pictures on logged-in Users"); ?></label>
                                 </div>
                             </div>
@@ -331,7 +332,7 @@
                             <label for="sn-subscription-from" class="col-sm-3 col-form-label text-muted"><?php sn_e("eMail 'From' Address"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-subscription-from" name="subscription_from" value="<?php echo sn_config("subscription_from"); ?>"
-                                    class="form-control" placeholder="<?php sn_e("eMail 'From' Address"); ?>" disabled="disabled" />
+                                       class="form-control" placeholder="<?php sn_e("eMail 'From' Address"); ?>" disabled="disabled" />
                             </div>
                         </div>
 
@@ -339,7 +340,7 @@
                             <label for="sn-subscription-reply" class="col-sm-3 col-form-label text-muted"><?php sn_e("eMail 'ReplyTo' Address"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-subscription-reply" name="subscription_reply" value="<?php echo sn_config("subscription_reply"); ?>"
-                                    class="form-control" placeholder="<?php sn_e("eMail 'ReplyTo' Address"); ?>" disabled="disabled" />
+                                       class="form-control" placeholder="<?php sn_e("eMail 'ReplyTo' Address"); ?>" disabled="disabled" />
                             </div>
                         </div>
 
@@ -348,7 +349,7 @@
                             <div class="col-sm-9">
                                 <select id="sn-subscription-optin" name="subscription_optin" class="form-control custom-select" disabled="disabled">
                                     <option value="default" <?php sn_selected("subscription_optin", "default"); ?>><?php sn_e("Use default Subscription eMail"); ?></option>
-                                    <?php foreach($static AS $key => $value){ ?>
+                                    <?php foreach ($static as $key => $value) { ?>
                                         <option value="<?php echo $key; ?>" <?php sn_selected("subscription_optin", $key); ?>><?php sn_e("Page"); ?>: <?php echo $value["title"]; ?></option>
                                     <?php } ?>
                                 </select>
@@ -360,11 +361,11 @@
                             <div class="col-sm-9">
                                 <select id="sn-subscription-ticker" name="subscription_ticker" class="form-control custom-select" disabled="disabled">
                                     <option value="default" <?php sn_selected("subscription_ticker", "default"); ?>><?php sn_e("Use default Notification eMail"); ?></option>
-                                    <?php foreach($static AS $key => $value){ ?>
+                                    <?php foreach ($static as $key => $value) { ?>
                                         <option value="<?php echo $key; ?>" <?php sn_selected("subscription_ticker", $key); ?>><?php sn_e("Page"); ?>: <?php echo $value["title"]; ?></option>
                                     <?php } ?>
                                 </select>
-                                <small class="form-text text-muted"><?php sn_e("Read more about a custom Notification eMails %s!", array('<a href="#" target="_blank">'.sn__("here").'</a>')); ?></small>
+                                <small class="form-text text-muted"><?php sn_e("Read more about a custom Notification eMails %s!", array('<a href="#" target="_blank">' . sn__("here") . '</a>')); ?></small>
                             </div>
                         </div>
                     </div>
@@ -379,7 +380,7 @@
                             <label for="sn-success-1" class="col-sm-3 col-form-label"><?php sn_e("Default Thanks Message"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-success-1" name="string_success_1" value="<?php echo sn_config("string_success_1"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_success_1"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_success_1"]; ?>" />
                             </div>
                         </div>
 
@@ -387,7 +388,7 @@
                             <label for="sn-success-2" class="col-sm-3 col-form-label"><?php sn_e("Thanks Message with Subscription"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-success-2" name="string_success_2" value="<?php echo sn_config("string_success_2"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_success_2"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_success_2"]; ?>" />
                             </div>
                         </div>
 
@@ -395,7 +396,7 @@
                             <label for="sn-success-3" class="col-sm-3 col-form-label"><?php sn_e("Thanks Message for Voting"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-success-3" name="string_success_3" value="<?php echo sn_config("string_success_3"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_success_3"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_success_3"]; ?>" />
                             </div>
                         </div>
 
@@ -403,7 +404,7 @@
                             <label for="sn-error-1" class="col-sm-3 col-form-label"><?php sn_e("Error: Unknown Error, Try again"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-error-1" name="string_error_1" value="<?php echo sn_config("string_error_1"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_1"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_1"]; ?>" />
                             </div>
                         </div>
 
@@ -411,7 +412,7 @@
                             <label for="sn-error-2" class="col-sm-3 col-form-label"><?php sn_e("Error: Username is invalid"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-error-2" name="string_error_2" value="<?php echo sn_config("string_error_2"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_2"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_2"]; ?>" />
                             </div>
                         </div>
 
@@ -419,7 +420,7 @@
                             <label for="sn-error-3" class="col-sm-3 col-form-label"><?php sn_e("Error: eMail Address is invalid"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-error-3" name="string_error_3" value="<?php echo sn_config("string_error_3"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_3"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_3"]; ?>" />
                             </div>
                         </div>
 
@@ -427,7 +428,7 @@
                             <label for="sn-error-4" class="col-sm-3 col-form-label"><?php sn_e("Error: Comment Text is missing"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-error-4" name="string_error_4" value="<?php echo sn_config("string_error_4"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_4"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_4"]; ?>" />
                             </div>
                         </div>
 
@@ -435,7 +436,7 @@
                             <label for="sn-error-5" class="col-sm-3 col-form-label"><?php sn_e("Error: Comment Title is missing"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-error-5" name="string_error_5" value="<?php echo sn_config("string_error_5"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_5"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_5"]; ?>" />
                             </div>
                         </div>
 
@@ -443,7 +444,7 @@
                             <label for="sn-error-6" class="col-sm-3 col-form-label"><?php sn_e("Error: Terms not accepted"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-error-6" name="string_error_6" value="<?php echo sn_config("string_error_6"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_6"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_6"]; ?>" />
                             </div>
                         </div>
 
@@ -451,7 +452,7 @@
                             <label for="sn-error-7" class="col-sm-3 col-form-label"><?php sn_e("Error: Marked as SPAM"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-error-7" name="string_error_7" value="<?php echo sn_config("string_error_7"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_7"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_7"]; ?>" />
                             </div>
                         </div>
 
@@ -459,7 +460,7 @@
                             <label for="sn-error-8" class="col-sm-3 col-form-label"><?php sn_e("Error: Already Voted"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-error-8" name="string_error_8" value="<?php echo sn_config("string_error_8"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_8"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_error_8"]; ?>" />
                             </div>
                         </div>
 
@@ -467,7 +468,7 @@
                             <label for="sn-terms-of-use" class="col-sm-3 col-form-label"><?php sn_e("Terms of Use"); ?></label>
                             <div class="col-sm-9">
                                 <input type="text" id="sn-terms-of-use" name="string_terms_of_use" value="<?php echo sn_config("string_terms_of_use"); ?>"
-                                    class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_terms_of_use"]; ?>" />
+                                       class="form-control" placeholder="<?php echo $SnickerPlugin->dbFields["string_terms_of_use"]; ?>" />
                             </div>
                         </div>
                     </div>
