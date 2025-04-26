@@ -1,10 +1,10 @@
 {
-    "author": "SamBrishes, pytesNET",
+    "author": "Harris Lineage",
     "email": "",
-    "website": "",
-    "version": "0.1.2",
-    "releaseDate": "2019-05-06",
+    "website": "https://github.com/harrislineage/snicker-plus",
+    "version": "1.0.0",
+    "releaseDate": "2025-04-25",
     "license": "MIT",
-    "compatible": "3.5.0",
-    "notes": "Added to the public Bludit repository 2022-03-15"
+    "compatible": "3.14.1",
+    "notes": "Forked from Snicker by pytesNET. Updated for PHP 8+ and modern Bludit versions."
 }

@@ -1,43 +1,45 @@
-Snicker
-=======
+Snicker Plus
+============
 
-Snicker is the first native FlatFile comment system for the Content Management System 
-[Bludit](https://github.com/bludit/bludit). It allows to write and publish comments using basic 
-HTML Syntax or Markdown. The Plugin also offers an extensive environment, many settings and 
-possibilities and is also completely compliant with the GDPR!
+Snicker Plus is a modern, fixed fork of the original Snicker plugin for the Content Management System [Bludit](https://github.com/bludit/bludit). It allows users to write and publish comments using basic HTML or Markdown. The plugin offers a rich set of features, extensive customization options, and remains fully compliant with the GDPR.
+
+This fork resolves PHP 8 compatibility issues, replaces deprecated patterns, and aims to keep the plugin stable and maintained for modern Bludit installations.
 
 Features
 --------
--   Level-Based, AJAX-enabled Commenting for Guests and Users
--   Many Configurations and adaptable Strings and Themes
--   Guest Management for Not-Logged-In Comment Authors
--   Moderatable Comments (Pending, Approved, Rejected, Spam)
--   Extensive Backend with many possibilities
--   Compliant with the European GDPR
+- Level-Based, AJAX-enabled Commenting for Guests and Users
+- Many Configurations and adaptable Strings and Themes
+- Guest Management for Not-Logged-In Comment Authors
+- Moderatable Comments (Pending, Approved, Rejected, Spam)
+- Extensive Backend with many possibilities
+- Compliant with the European GDPR
 
 Requirements
 ------------
--   PHP v5.6.0+
--   Bludit v3.5.0+
+- PHP v8.0+ (Tested with 8.2)
+- Bludit v3.14.1+ (Tested with 3.16.2)
 
 Dependencies
 ------------
--   Snicker use the awesome [Captcha PHP Library](https://github.com/Gregwar/Captcha) made by Grégoire Passault
--   Snicker uses also the [PureCaptcha PHP Library](https://github.com/OWASP/PureCaptcha) as fallback by Abbas Naderi
--   The Avatars are served per default by [Gravatar](https://de.gravatar.com/), made by Automattic / WordPress
--   **But** you can also directly use [Identicons](http://identicon.net) instead...
--   ... where we use the [Identicon PHP Library](https://github.com/yzalis/Identicon) from Benjamin Laugueux
--   ... and the [Identicon JavaScript Library](https://github.com/stewartlord/identicon.js) from Stewart Lord
--   ... which itself depends on the [PNG JavaScript Library](https://www.xarg.org/2010/03/generate-client-side-png-files-using-javascript/) by Robert Eisele
+- Snicker Plus uses the awesome [Captcha PHP Library](https://github.com/Gregwar/Captcha) made by Grégoire Passault
+- It also includes the [PureCaptcha PHP Library](https://github.com/OWASP/PureCaptcha) as a fallback, by Abbas Naderi
+- The avatars are served by default using [Gravatar](https://en.gravatar.com/), provided by Automattic / WordPress
+- **Alternatively**, you can use [Identicons](http://identicon.net)...
+- ... via the [Identicon PHP Library](https://github.com/yzalis/Identicon) from Benjamin Laugueux
+- ... and the [Identicon JavaScript Library](https://github.com/stewartlord/identicon.js) by Stewart Lord
+- ... which itself depends on the [PNG JavaScript Library](https://www.xarg.org/2010/03/generate-client-side-png-files-using-javascript/) by Robert Eisele
 
-Thanks for this awesome packages and projects!
+Thanks to these awesome libraries and developers!
 
 Installation
 ------------
--   Download the [Snicker Plugin](https://github.com/pytesNET/snicker/zipball/master)
--   Upload it to your `bl-plugins` folder of your Bludit Website
--   Visit the Bludit Administration and enable the "Snicker" Plugin through "Settings" > "Plugins"
+- Download or clone the [Snicker Plus Plugin](https://github.com/harrislineage/snicker-plus)
+- Upload it to your `bl-plugins` folder in your Bludit site
+- Visit the Bludit Administration and enable "Snicker Plus" under "Settings" → "Plugins"
 
-Copyright & License
--------------------
-Published under the MIT-License; Copyright &copy; 2019 SamBrishes, pytesNET
+License
+-------
+Published under the MIT License  
+Originally created by SamBrishes, pytesNET © 2019  
+This fork maintained by harrislineage © 2025  
+Repository: https://github.com/harrislineage/snicker-plus

@@ -1,11 +1,19 @@
 Changelog
 =========
 
+Version 1.0.0 - Snicker Plus
+----------------------------
+- Forked from [Snicker](https://github.com/pytesNET/snicker) by pytesNET.
+- Updated for PHP 8.2+ compatibility (fixed deprecated dynamic properties).
+- CSS improvements to better match modern Bludit themes.
+- Basic code cleanup and correction of spelling errors (no feature changes yet).
+- First stable release of Snicker Plus.
+
 Version 0.1.2 - Alpha
 ---------------------
 -   Bugfix: You can't comment, after you already comment (Error + Auto-Logout).
 -   Bugfix: Translated strings didn't returned correctly (English is returned instead),
-            Thansk to [#10](https://github.com/pytesNET/snicker/issues/10).
+            Thanks to [#10](https://github.com/pytesNET/snicker/issues/10).
 -   Bugfix: The "Terms of Use" checkbox couldn't be disabled.
             Thanks to [#16](https://github.com/pytesNET/snicker/issues/16).
 
@@ -23,7 +31,7 @@ Version 0.1.1 - Alpha
 -   Bugfix: The `comments_per_page` option couldn't be set on 0 to disable the limit!
             Thanks to [#9](https://github.com/pytesNET/snicker/issues/9).
 -   Bugfix: Reload the Captcha, if it was wrong.
-            Thansk to [#5](https://github.com/pytesNET/snicker/issues/5).
+            Thanks to [#5](https://github.com/pytesNET/snicker/issues/5).
 
 Version 0.1.0 - Alpha
 ---------------------
